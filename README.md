@@ -24,11 +24,11 @@ You must provide an existing item number in the module settings.
 ## Troubleshooting
 
 ### Banner Not Displaying
-If the banner is not displaying, verify:
+If the banner is not displaying, verify the following:
 - Your module is active.
-- An existing item number is provided in the module settings.
-- The matching product is active and avialble for current user.
 - You are on the start page of your shop.
+- An existing item number is provided in the module settings.
+- The matching product is active and available for the current user.
 
 If you still encounter any issues, clear your `source/tmp` directory. You can do this by running the `oe:cache:clear` command:
 
