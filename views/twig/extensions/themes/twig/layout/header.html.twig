@@ -2,14 +2,13 @@
 {% block layout_header_bottom %}
     {{ parent() }}
 
-    {% set productTitle = 'Trapez QWE' %}
     {% set currency = oView.getActCurrency() %}
-    {% set productPrice = format_price('123.45678', { currency: currency }) %}
-    {% set productUrl = 'https://sp.oxid.academy/' %}
+    {% set formattedPrice = format_price(productPrice, { currency: currency }) %}
+    
     {% set buttonText = translate({ ident: 'OXACPPB_BUTTONTEXT'}) %}
 
     <div>
-        <span>{{ translate({ ident: 'OXACPPB_PROMOTIONMESSAGE', args: { productTitle, productPrice } }) }}</span>
+        <span>{{ translate({ ident: 'OXACPPB_PROMOTIONMESSAGE', args: { productTitle, formattedPrice } }) }}</span>
         <a class='btn btn-primary' href='{{ productUrl }}' title='{{ buttonText }}'>{{ buttonText }}</a>
     </div>
 {% endblock %}
