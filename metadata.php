@@ -30,8 +30,8 @@ $aModule = [
     ],
     'settings' => [
         [
-            'group' => 'oxacppb_main',
-            'name'  => 'oxacppb_itemId',
+            'group' => 'oxacppb_productSelection',
+            'name'  => 'oxacppb_itemNumber',
             'type'  => 'str',
             'value' => ''
         ],
