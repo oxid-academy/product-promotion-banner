@@ -8,7 +8,8 @@
 declare(strict_types=1);
 
 $aLang = [
-    'charset'                  => 'UTF-8',
-    'OXACPPB_PROMOTIONMESSAGE' => 'Jetzt bei uns im Shop: %s für nur %s!',
-    'OXACPPB_BUTTONTEXT'       => 'Direkt kaufen',
+    'charset'                              => 'UTF-8',
+    'OXACPPB_PROMOTION_MESSAGE'            => 'Kaufe jetzt das %s in unserem Shop!',
+    'OXACPPB_PROMOTION_MESSAGE_WITH_PRICE' => 'Kaufe jetzt das %s für nur %s in unserem Shop!',
+    'OXACPPB_BUTTON_TEXT'                  => 'Jetzt zuschlagen',
 ];
