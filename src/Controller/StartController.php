@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace OxidAcademy\ProductPromotionBanner;
+namespace OxidAcademy\ProductPromotionBanner\Controller;
 
 use OxidAcademy\ProductDataReader\DataReaderService;
 use OxidEsales\EshopCommunity\Internal\Container\ContainerFactory;

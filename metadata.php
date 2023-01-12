@@ -26,7 +26,7 @@ $aModule = [
     'url'         => 'https://www.oxid-esales.com/ressourcen/academy/',
     'email'       => 'academy@oxid-esales.com',
     'extend'      => [
-        OxidEsales\Eshop\Application\Controller\StartController::class => OxidAcademy\ProductPromotionBanner\StartController::class,
+        OxidEsales\Eshop\Application\Controller\StartController::class => OxidAcademy\ProductPromotionBanner\Controller\StartController::class,
     ],
     'settings' => [
         [
