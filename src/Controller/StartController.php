@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace OxidAcademy\ProductPromotionBanner\Controller;
 
 use OxidAcademy\ProductDataReader\DataReaderService;
+use OxidAcademy\ProductPromotionBanner\Service\ModuleSettings;
 use OxidEsales\EshopCommunity\Internal\Container\ContainerFactory;
 
 class StartController extends StartController_parent
@@ -18,15 +19,37 @@ class StartController extends StartController_parent
 
     private function setProductDataToTemplate(): void
     {
-        $itemNumber = 1402;
-
-        $serviceContainer = ContainerFactory::getInstance()->getContainer();
-        $dataReaderService = $serviceContainer->get(DataReaderService::class);
-
-        $productData = $dataReaderService->readDataByItemNumber($itemNumber);
+        $productData = $this->getProductData();
 
         $this->addTplParam('productTitle', $productData['title']);
         $this->addTplParam('productPrice', $productData['price']);
-        $this->addTplParam('productUrl', $productData['turl']);
+        $this->addTplParam('productUrl', $productData['url']);
+
+        $this->addTplParam('displayPrice', $this->displayProductPrice());
+    }
+
+    private function getProductData(): array
+    {
+        $dataReaderService = ContainerFactory::getInstance()
+            ->getContainer()
+            ->get(DataReaderService::class);
+
+        return $dataReaderService->readDataByItemNumber($this->getItemNumber());
+    }
+
+    private function getItemNumber(): int
+    {
+        return ContainerFactory::getInstance()
+            ->getContainer()
+            ->get(ModuleSettings::class)
+            ->getItemNumber();
+    }
+
+    private function displayProductPrice(): bool
+    {
+        return ContainerFactory::getInstance()
+            ->getContainer()
+            ->get(ModuleSettings::class)
+            ->getDisplayPrice();
     }
 }

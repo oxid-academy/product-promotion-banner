@@ -1,1 +1,9 @@
 services:
+
+  _defaults:
+    public: false
+    autowire: true
+
+  OxidAcademy\ProductPromotionBanner\Service\:
+    resource: 'src/Service/*'
+    public: true
