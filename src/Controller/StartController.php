@@ -21,11 +21,14 @@ class StartController extends StartController_parent
     {
         $productData = $this->getProductData();
 
-        $this->addTplParam('productTitle', $productData['title']);
-        $this->addTplParam('productPrice', $productData['price']);
-        $this->addTplParam('productUrl', $productData['url']);
-
         $this->addTplParam('displayPrice', $this->displayProductPrice());
+        $this->addTplParam('productMatch', $productData['match']);
+
+        if ($productData['match']) {
+            $this->addTplParam('productTitle', $productData['title']);
+            $this->addTplParam('productPrice', $productData['price']);
+            $this->addTplParam('productUrl', $productData['url']);
+        }
     }
 
     private function getProductData(): array

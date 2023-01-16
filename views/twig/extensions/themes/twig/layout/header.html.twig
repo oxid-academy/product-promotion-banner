@@ -2,18 +2,20 @@
 {% block layout_header_bottom %}
     {{ parent() }}
 
-    {% set buttonText = translate({ ident: 'OXACPPB_BUTTON_TEXT'}) %}
-
-    <div>
-        {% if displayPrice %}
-            {% set currency = oView.getActCurrency() %}
-            {% set formattedPrice = format_price(productPrice, { currency: currency }) %}
-
-            <span>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE_WITH_PRICE', args: { productTitle, formattedPrice } }) }}</span>
-        {% else %}
-            <span>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE', args: productTitle }) }}</span>
-        {% endif %}
+    {% if productMatch %}
+        {% set buttonText = translate({ ident: 'OXACPPB_BUTTON_TEXT'}) %}
         
-        <a class='btn btn-primary' href='{{ productUrl }}' title='{{ buttonText }}'>{{ buttonText }}</a>
-    </div>
+        <div>
+            {% if displayPrice %}
+                {% set currency = oView.getActCurrency() %}
+                {% set formattedPrice = format_price(productPrice, { currency: currency }) %}
+
+                <span>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE_WITH_PRICE', args: { productTitle, formattedPrice } }) }}</span>
+            {% else %}
+                <span>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE', args: productTitle }) }}</span>
+            {% endif %}
+            
+            <a class='btn btn-primary' href='{{ productUrl }}' title='{{ buttonText }}'>{{ buttonText }}</a>
+        </div>
+    {% endif %}
 {% endblock %}
