@@ -30,16 +30,16 @@ $aModule = [
     ],
     'settings' => [
         [
-            'group' => 'oxacppb_promotionMessage',
-            'name'  => 'oxacppb_displayPrice',
-            'type'  => 'bool',
-            'value' => true
-        ],
-        [
             'group' => 'oxacppb_productSelection',
             'name'  => 'oxacppb_itemNumber',
             'type'  => 'str',
             'value' => ''
+        ],
+        [
+            'group' => 'oxacppb_promotionMessage',
+            'name'  => 'oxacppb_displayPrice',
+            'type'  => 'bool',
+            'value' => true
         ],
     ],
 ];
