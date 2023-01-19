@@ -20,9 +20,9 @@ class ModuleSettings
 {
     public function __construct(private ModuleSettingServiceInterface $moduleSettingService) {}
 
-    public function getItemNumber(): int
+    public function getItemNumber(): string
     {
-        return (int) $this->moduleSettingService->getInteger(Module::SETTING_ITEM_NUMBER, Module::MODULE_ID);
+        return (string) $this->moduleSettingService->getString(Module::SETTING_ITEM_NUMBER, Module::MODULE_ID);
     }
 
     public function getDisplayPrice(): bool

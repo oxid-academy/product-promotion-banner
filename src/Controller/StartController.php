@@ -40,7 +40,7 @@ class StartController extends StartController_parent
         return $dataReaderService->readDataByItemNumber($this->getItemNumber());
     }
 
-    private function getItemNumber(): int
+    private function getItemNumber(): string
     {
         return ContainerFactory::getInstance()
             ->getContainer()

@@ -38,7 +38,7 @@ $aModule = [
         [
             'group' => 'oxacppb_productSelection',
             'name'  => 'oxacppb_itemNumber',
-            'type'  => 'num',
+            'type'  => 'str',
             'value' => ''
         ],
     ],
