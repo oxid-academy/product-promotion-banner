@@ -7,3 +7,6 @@ services:
   OxidAcademy\ProductPromotionBanner\Service\:
     resource: 'src/Service/*'
     public: true
+  
+  OxidAcademy\ProductPromotionBanner\Subscriber\AfterModelUpdate:
+    tags: [ 'kernel.event_subscriber' ]
