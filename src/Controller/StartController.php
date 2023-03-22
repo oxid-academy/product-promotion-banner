@@ -6,10 +6,13 @@ namespace OxidAcademy\ProductPromotionBanner\Controller;
 
 use OxidAcademy\ProductDataReader\DataReaderService;
 use OxidAcademy\ProductPromotionBanner\Service\ModuleSettings;
+use OxidAcademy\ProductPromotionBanner\Traits\ServiceContainer;
 use OxidEsales\EshopCommunity\Internal\Container\ContainerFactory;
 
 class StartController extends StartController_parent
 {
+    use ServiceContainer;
+
     public function init()
     {
         parent::init();
@@ -33,26 +36,16 @@ class StartController extends StartController_parent
 
     private function getProductData(): array
     {
-        $dataReaderService = ContainerFactory::getInstance()
-            ->getContainer()
-            ->get(DataReaderService::class);
-
-        return $dataReaderService->readDataByItemNumber($this->getItemNumber());
+        return $this->getServiceFromContainer(DataReaderService::class)->readDataByItemNumber($this->getItemNumber());
     }
 
     private function getItemNumber(): string
     {
-        return ContainerFactory::getInstance()
-            ->getContainer()
-            ->get(ModuleSettings::class)
-            ->getItemNumber();
+        return $this->getServiceFromContainer(ModuleSettings::class)->getItemNumber();
     }
 
     private function displayProductPrice(): bool
     {
-        return ContainerFactory::getInstance()
-            ->getContainer()
-            ->get(ModuleSettings::class)
-            ->getDisplayPrice();
+        return $this->getServiceFromContainer(ModuleSettings::class)->getDisplayPrice();
     }
 }
