@@ -7,11 +7,15 @@ namespace OxidAcademy\ProductPromotionBanner\Subscriber;
 use OxidAcademy\ProductPromotionBanner\Service\ModuleSettings;
 use OxidEsales\Eshop\Application\Model\Article;
 use OxidEsales\EshopCommunity\Internal\Transition\ShopEvents\AfterModelUpdateEvent;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class AfterModelUpdate implements EventSubscriberInterface
 {
-    public function __construct(private ModuleSettings $moduleSettings) {}
+    public function __construct(
+        private ModuleSettings $moduleSettings,
+        private LoggerInterface $logger
+    ) {}
     
     public function handle(AfterModelUpdateEvent $event): AfterModelUpdateEvent
     {
@@ -23,6 +27,7 @@ class AfterModelUpdate implements EventSubscriberInterface
             && $model->getStock() < 1
         ) {
             $this->moduleSettings->resetItemNumber();
+            $this->logger->info('Module Product Promotion Banner: item number was reset.');
         }
 
         return $event;
