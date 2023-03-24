@@ -1,21 +1,23 @@
 {% extends 'layout/header.html.twig' %}
 {% block layout_header_bottom %}
+    {{ style({ include: oViewConf.getModuleUrl('oxacppb', 'css/style.css') }) }}
+
     {{ parent() }}
 
     {% if productMatch %}
         {% set buttonText = translate({ ident: 'OXACPPB_BUTTON_TEXT'}) %}
         
-        <div>
+        <div class='promotionBanner'>
             {% if displayPrice %}
                 {% set currency = oView.getActCurrency() %}
                 {% set formattedPrice = format_price(productPrice, { currency: currency }) %}
 
-                <span>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE_WITH_PRICE', args: { productTitle, formattedPrice } }) }}</span>
+                <p>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE_WITH_PRICE', args: { productTitle, formattedPrice } }) }}</p>
             {% else %}
-                <span>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE', args: productTitle }) }}</span>
+                <p>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE', args: productTitle }) }}</p>
             {% endif %}
             
-            <a class='btn btn-primary' href='{{ productUrl }}' title='{{ buttonText }}'>{{ buttonText }}</a>
+            <a href='{{ productUrl }}' title='{{ buttonText }}'>{{ buttonText }}</a>
         </div>
     {% endif %}
 {% endblock %}
