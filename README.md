@@ -2,7 +2,7 @@
 This package is part of the **OXID Academy Training Development Basics**. Please see our website for current training offers in [german](https://www.oxid-esales.com/ressourcen/academy/schulungen/) or [english](https://www.oxid-esales.com/en/resources/academy/training-courses/) language.
 
 ## Description
-This extension is an **OXID eShop Module**. It displays a banner on the start page to promote a specific product. The product is selected in the module settings by entering its item number. Everytime the setting is changed, an info is written to the `source/log/oxideshop.log`.
+This extension is an **OXID eShop Module**. It displays a banner on the start page to promote a specific product. The product is selected in the module settings by entering its item number. As soon as the stock of the selected product drops under ten items, the setting is reset and an info is written to the `source/log/oxideshop.log`.
 
 ## Installation
 In your shop's root directory, execute the following Composer command:
@@ -37,7 +37,7 @@ If you still encounter any issues, clear your `source/tmp` directory. You can do
 ```
 
 ### No Log Entries
-If you do not see corresponding entries in `source/log/oxideshop.log` after changing the item number in the module settings, open your `source/config.inc.php` file and change your log level to `info` at least:
+If you do not see corresponding entries in `source/log/oxideshop.log`, open your `source/config.inc.php` file and change your log level to `info` at least:
 ```php
 /**
  * String PSR3 log level Psr\Log\LogLevel
