@@ -24,7 +24,7 @@ class AfterModelUpdate implements EventSubscriberInterface
         if (
             get_class($model) === Article::class
             && $model->getFieldData('oxartnum') == $this->moduleSettings->getItemNumber()
-            && $model->getStock() < 1
+            && $model->getStock() < 10
         ) {
             $this->moduleSettings->resetItemNumber();
             $this->logger->info('Module Product Promotion Banner: item number was reset.');
