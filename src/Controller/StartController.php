@@ -24,7 +24,6 @@ class StartController extends StartController_parent
     {
         $productData = $this->getProductData();
 
-        $this->addTplParam('displayPrice', $this->displayProductPrice());
         $this->addTplParam('productMatch', $productData['match']);
 
         if ($productData['match']) {
@@ -42,10 +41,5 @@ class StartController extends StartController_parent
     private function getItemNumber(): string
     {
         return $this->getServiceFromContainer(ModuleSettings::class)->getItemNumber();
-    }
-
-    private function displayProductPrice(): bool
-    {
-        return $this->getServiceFromContainer(ModuleSettings::class)->getDisplayPrice();
     }
 }

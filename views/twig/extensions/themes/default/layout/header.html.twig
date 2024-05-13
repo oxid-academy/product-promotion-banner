@@ -8,14 +8,10 @@
         {% set buttonText = translate({ ident: 'OXACPPB_BUTTON_TEXT'}) %}
         
         <div class='promotionBanner'>
-            {% if displayPrice %}
-                {% set currency = oView.getActCurrency() %}
-                {% set formattedPrice = format_price(productPrice, { currency: currency }) %}
+            {% set currency = oView.getActCurrency() %}
+            {% set formattedPrice = format_price(productPrice, { currency: currency }) %}
 
-                <p>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE_WITH_PRICE', args: { productTitle, formattedPrice } }) }}</p>
-            {% else %}
-                <p>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE', args: productTitle }) }}</p>
-            {% endif %}
+            <p>{{ translate({ ident: 'OXACPPB_PROMOTION_MESSAGE', args: { productTitle, formattedPrice } }) }}</p>
             
             <a href='{{ productUrl }}' title='{{ buttonText }}'>{{ buttonText }}</a>
         </div>

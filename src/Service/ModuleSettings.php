@@ -17,11 +17,6 @@ class ModuleSettings
         return (string) $this->moduleSettingService->getString(Module::SETTING_ITEM_NUMBER, Module::MODULE_ID);
     }
 
-    public function getDisplayPrice(): bool
-    {
-        return (bool) $this->moduleSettingService->getBoolean(Module::SETTING_DISPLAY_PRICE, Module::MODULE_ID);
-    }
-
     public function resetItemNumber(): void
     {
         $this->moduleSettingService->saveString(Module::SETTING_ITEM_NUMBER, '', Module::MODULE_ID);

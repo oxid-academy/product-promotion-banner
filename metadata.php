@@ -35,11 +35,5 @@ $aModule = [
             'type'  => 'str',
             'value' => ''
         ],
-        [
-            'group' => 'oxacppb_promotionMessage',
-            'name'  => 'oxacppb_displayPrice',
-            'type'  => 'bool',
-            'value' => true
-        ],
     ],
 ];
