@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2024-07-05
+
 ### Changed
 `StartController` Replaced custom trait with `ContainerFacade`.
+`StartController` Switched to Product Data Reader 2.0.
 
 ### Removed
 `Trait\ServiceContainer`.
