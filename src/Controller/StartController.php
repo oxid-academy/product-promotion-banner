@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace OxidAcademy\ProductPromotionBanner\Controller;
 
-use OxidAcademy\ProductDataReader\DataReaderService;
+use OxidAcademy\ProductDataReader\Service\DataReader;
 use OxidAcademy\ProductPromotionBanner\Service\ModuleSettings;
 use OxidEsales\EshopCommunity\Core\Di\ContainerFacade;
 
@@ -32,7 +32,7 @@ class StartController extends StartController_parent
 
     private function getProductData(): array
     {
-        return ContainerFacade::get(DataReaderService::class)->readDataByItemNumber($this->getItemNumber());
+        return ContainerFacade::get(DataReader::class)->readDataByItemNumber($this->getItemNumber());
     }
 
     private function getItemNumber(): string
