@@ -42,7 +42,7 @@ composer require oxid-academy/product-promotion-banner:dev-b-7.0.x
 
 You can activate the module in your OXID eShop administration area or via [OE Console](https://docs.oxid-esales.com/developer/en/latest/development/tell_me_about/console.html) by running the command `oe:module:activate` on your CLI:
 ```console
-./vendor/bin/oe-console oe:module:activate id
+./vendor/bin/oe-console oe:module:activate oxacppb
 ```
 
 ### Configuration
