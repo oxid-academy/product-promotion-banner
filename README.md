@@ -13,10 +13,12 @@ This extension is an **OXID eShop Module**. It displays a banner on the start pa
 
 ### Versions
 
+- 2.x.x version is compatible with OXID eShop 7.1.
 - 1.x.x version is compatible with OXID eShop 7.1 and 7.0.
 
 ### Branches
 
+- b-7.1.x branch is compatible with OXID eShop compilation b-7.1.x.
 - b-7.0.x branch is compatible with OXID eShop compilation b-7.1.x and b-7.0.x.
 
 ## Installation
@@ -25,15 +27,15 @@ This extension is an **OXID eShop Module**. It displays a banner on the start pa
 
 In your shop's root directory, execute the following Composer command:
 ```console
-composer require oxid-academy/product-promotion-banner:^1.0.0
+composer require oxid-academy/product-promotion-banner:^2.0.0
 ```
 ### Development
 
 In your shop's root directory, execute the following commands:
 ```console
-git clone -b b-7.0.x https://github.com/oxid-academy/product-promotion-banner.git ./EXTENSIONS/product-promotion-banner
+git clone -b b-7.1.x https://github.com/oxid-academy/product-promotion-banner.git ./EXTENSIONS/product-promotion-banner
 composer config repositories.oxac-ppb path ./EXTENSIONS/product-promotion-banner
-composer require oxid-academy/product-promotion-banner:dev-b-7.0.x
+composer require oxid-academy/product-promotion-banner:dev-b-7.1.x
 ```
 
 ## Usage
