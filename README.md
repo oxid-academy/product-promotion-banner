@@ -7,7 +7,9 @@ This package is part of the **OXID Academy Training Development Basics**. Please
 
 ## Description
 
-This extension is an **OXID eShop Module**. It displays a banner on the start page to promote a specific product. The product is selected in the module settings by entering its item number. As soon as the stock of the selected product drops under ten items, the setting is reset and an info is written to the `source/log/oxideshop.log`.
+This extension is an **OXID eShop Module**. It displays a banner on the start page to promote a specific product. The product is selected in the module settings by entering its item number. You can add more item numbers on the configuration page *Promotion Banner > Product Selection*. A product gots deactivated as soon as the stock falls below ten. Then the next product from the queue is automatically set to the module setting. If no product is left, the setting is empty and the banner will not be display.
+
+EVerytime the product changes an info is written to the `source/log/oxideshop.log`.
 
 ## Compatibility
 
@@ -54,7 +56,7 @@ You can activate the module in your OXID eShop administration area or via [OE Co
 
 ### Configuration
 
-You must provide an existing item number in the module settings. You can add more item numbers on the configuration page *Promotion Banner > Product Selection*. A product gots deactivated as soon as the stock falls below 10. Then the next product from the queue is automatically set to the module setting. If no product is left, the setting is empty and the banner will not be display.
+You must provide at least an existing item number in the module settings. You can add more item numbers on the configuration page. 
 
 ## Troubleshooting
 
