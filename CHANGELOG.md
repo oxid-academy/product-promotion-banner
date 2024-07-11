@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2024-07-11
+
 ### Added
 - `ModuleSettings` Has new function to set item number.
 - `ProductSelectionController` Provides function to add products to queue.
