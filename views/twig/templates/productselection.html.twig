@@ -15,6 +15,10 @@
     <input type='submit' value='{{ translate({ ident: 'OXACPPB_BTNSAVE' }) }}' />
 </form>
 
+{% if error %}
+    <div class='error'>{{ translate({ ident: 'OXACPPB_ERROR' }) }}</div>
+{% endif %}
+
 <h3>{{ translate({ ident: 'OXACPPB_SAVED' }) }}</h3>
 
 {% for product in products  %}

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace OxidAcademy\ProductPromotionBanner\Controller\Admin;
 
+use OxidAcademy\ProductDataReader\Service\DataReader;
 use OxidAcademy\ProductPromotionBanner\Model\BannerProduct;
 use OxidEsales\Eshop\Application\Controller\Admin\AdminController;
 use OxidEsales\Eshop\Core\Field;
@@ -27,10 +28,18 @@ class ProductSelectionController extends AdminController
     public function save(): void
     {
         $param = Registry::getRequest()->getRequestEscapedParameter('param');
-        $bannerProduct = oxNew(BannerProduct::class);
-        $bannerProduct->oxacbannerproducts__oxid = $bannerProduct->getId();
-        $bannerProduct->oxacbannerproducts__oxacitemnumber = new Field($param['item-number']);
-        $bannerProduct->save();
+
+        $dataReader = ContainerFacade::get(DataReader::class);
+        $result = $dataReader->readDataByItemNumber($param['item-number']);
+
+        if ($result['match']) {
+            $bannerProduct = oxNew(BannerProduct::class);
+            $bannerProduct->oxacbannerproducts__oxid = $bannerProduct->getId();
+            $bannerProduct->oxacbannerproducts__oxacitemnumber = new Field($param['item-number']);
+            $bannerProduct->save();
+        } else {
+            $this->addTplParam('error', true);
+        }
     }
 
     private function getSelectedProducts(): array
@@ -39,7 +48,7 @@ class ProductSelectionController extends AdminController
         $queryBuilder
             ->select('OXACITEMNUMBER')
             ->from('oxacbannerproducts');
-
+        
         return $queryBuilder->execute()->fetchAllAssociative();
     }
 }

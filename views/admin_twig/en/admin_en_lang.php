@@ -13,4 +13,5 @@ $aLang = [
     'OXACPPB_SAVED' => 'Saved Products',
     'OXACPPB_INPUT' => 'Item Number',
     'OXACPPB_BTNSAVE' => 'Save',
+    'OXACPPB_ERROR' => 'Not a valid item number.',
 ];

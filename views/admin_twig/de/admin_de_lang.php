@@ -13,4 +13,5 @@ $aLang = [
     'OXACPPB_SAVED' => 'Gespeicherte Produkte',
     'OXACPPB_INPUT' => 'Artikelnummer',
     'OXACPPB_BTNSAVE' => 'Speichern',
+    'OXACPPB_ERROR' => 'Keine gültige Artikelnummer.',
 ];
