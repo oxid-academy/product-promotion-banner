@@ -25,10 +25,11 @@ This extension is an **OXID eShop Module**. It displays a banner on the start pa
 
 ### Production
 
-In your shop's root directory, execute the following Composer command:
+In your shop's root directory, execute the following commands:
 
 ```console
 composer require oxid-academy/product-promotion-banner:^2.0.0
+./vendor/bin/oe-eshop-db_migrate migrations:migrate oxacppb 
 ```
 ### Development
 
@@ -38,6 +39,7 @@ In your shop's root directory, execute the following commands:
 git clone -b b-7.1.x https://github.com/oxid-academy/product-promotion-banner.git ./EXTENSIONS/product-promotion-banner
 composer config repositories.oxac-ppb path ./EXTENSIONS/product-promotion-banner
 composer require oxid-academy/product-promotion-banner:dev-b-7.1.x
+./vendor/bin/oe-eshop-db_migrate migrations:migrate oxacppb 
 ```
 
 ## Usage
