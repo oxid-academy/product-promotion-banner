@@ -54,7 +54,7 @@ You can activate the module in your OXID eShop administration area or via [OE Co
 
 ### Configuration
 
-You must provide an existing item number in the module settings.
+You must provide an existing item number in the module settings. You can add more item numbers on the configuration page *Promotion Banner > Product Selection*. A product gots deactivated as soon as the stock falls below 10. Then the next product from the queue is automatically set to the module setting. If no product is left, the setting is empty and the banner will not be display.
 
 ## Troubleshooting
 
