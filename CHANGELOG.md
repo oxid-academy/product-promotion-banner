@@ -7,14 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- `ModuleSettings` Has new function to set item number.
+- `ProductSelectionController` Provides function to add products to queue.
+- `ProductSelector` Switches to the next product in queue.
+- `BannerProduct` Represents products in queue for banner.
+- Controller registration in `metadata.php`.
+- Template for product selection.
+- Menu entries for admin configuration page.
+- CSS for admin page.
+- Several translations for admin area.
+- Migrations for product queue table.
+
+### Changed
+- `AfterModelUpdate` Now takes next product from queue instead to reset directly.
+
 ## [2.0.0] - 2024-07-05
 
 ### Changed
-`StartController` Replaced custom trait with `ContainerFacade`.
-`StartController` Switched to Product Data Reader 2.0.
+- `StartController` Replaced custom trait with `ContainerFacade`.
+- `StartController` Switched to Product Data Reader 2.0.
 
 ### Removed
-`Trait\ServiceContainer`.
+- `Trait\ServiceContainer`.
 
 ## [1.0.0] - 2024-05-13
 

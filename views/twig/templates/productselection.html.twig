@@ -1,0 +1,24 @@
+<link rel='stylesheet' href='{{ oViewConf.getModuleUrl('oxacppb', 'css/admin.css') }}' />
+
+<h2>{{ translate({ ident: 'OXACPPB_HEADLINE' }) }}</h2>
+
+<h3>{{ translate({ ident: 'OXACPPB_SELECTION' }) }}</h3>
+
+<form action='{{ oViewConf.getSelfLink() }}' method='POST'>
+    {{ oViewConf.getHiddenSid()|raw }}
+    <input type='hidden' name='cl' value='oxacppbproductselection' />
+    <input type='hidden' name='fnc' value='save' />
+
+    <label>{{ translate({ ident: 'OXACPPB_INPUT' }) }}</label>
+    <input type='text' name='param[item-number]' value='' />
+
+    <input type='submit' value='{{ translate({ ident: 'OXACPPB_BTNSAVE' }) }}' />
+</form>
+
+<h3>{{ translate({ ident: 'OXACPPB_SAVED' }) }}</h3>
+
+{% for product in products  %}
+    <div>{{ product.OXACITEMNUMBER }}</div>
+{% endfor %}
+
+
