@@ -18,3 +18,8 @@ input {
 input:hover {
     background-color: #ccc;
 }
+
+div.error {
+    color: #ff0044;
+    font-weight: bold;
+}
