@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OX>
+    <OXMENU id="NAVIGATION_ESHOPADMIN">
+        <MAINMENU id="OXACPPB_MAINMENU">
+            <SUBMENU id="OXACPPB_SUBMENU" cl="oxacppbproductselection">
+            </SUBMENU>
+        </MAINMENU>
+    </OXMENU>
+</OX>

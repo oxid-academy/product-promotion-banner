@@ -7,7 +7,9 @@ This package is part of the **OXID Academy Training Development Basics**. Please
 
 ## Description
 
-This extension is an **OXID eShop Module**. It displays a banner on the start page to promote a specific product. The product is selected in the module settings by entering its item number. As soon as the stock of the selected product drops under ten items, the setting is reset and an info is written to the `source/log/oxideshop.log`.
+This extension is an **OXID eShop Module**. It displays a banner on the start page to promote a specific product. The product is selected in the module settings by entering its item number. You can add more item numbers on the configuration page *Promotion Banner > Product Selection*. A product gots deactivated as soon as the stock falls below ten. Then the next product from the queue is automatically set to the module setting. If no product is left, the setting is empty and the banner will not be display.
+
+EVerytime the product changes an info is written to the `source/log/oxideshop.log`.
 
 ## Compatibility
 
@@ -25,17 +27,21 @@ This extension is an **OXID eShop Module**. It displays a banner on the start pa
 
 ### Production
 
-In your shop's root directory, execute the following Composer command:
+In your shop's root directory, execute the following commands:
+
 ```console
 composer require oxid-academy/product-promotion-banner:^2.0.0
+./vendor/bin/oe-eshop-db_migrate migrations:migrate oxacppb 
 ```
 ### Development
 
 In your shop's root directory, execute the following commands:
+
 ```console
 git clone -b b-7.1.x https://github.com/oxid-academy/product-promotion-banner.git ./EXTENSIONS/product-promotion-banner
 composer config repositories.oxac-ppb path ./EXTENSIONS/product-promotion-banner
 composer require oxid-academy/product-promotion-banner:dev-b-7.1.x
+./vendor/bin/oe-eshop-db_migrate migrations:migrate oxacppb 
 ```
 
 ## Usage
@@ -43,13 +49,14 @@ composer require oxid-academy/product-promotion-banner:dev-b-7.1.x
 ### Activation
 
 You can activate the module in your OXID eShop administration area or via [OE Console](https://docs.oxid-esales.com/developer/en/latest/development/tell_me_about/console.html) by running the command `oe:module:activate` on your CLI:
+
 ```console
 ./vendor/bin/oe-console oe:module:activate oxacppb
 ```
 
 ### Configuration
 
-You must provide an existing item number in the module settings.
+You must provide at least an existing item number in the module settings. You can add more item numbers on the configuration page. 
 
 ## Troubleshooting
 
