@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2024-07-11
+
 ### Added
 - `ProductSelectionController` Check for valid item number.
 - Corresponding output message on invalid item number.
