@@ -7,7 +7,6 @@ namespace OxidAcademy\ProductPromotionBanner\Controller\Admin;
 use OxidAcademy\ProductDataReader\Service\DataReader;
 use OxidAcademy\ProductPromotionBanner\Model\BannerProduct;
 use OxidEsales\Eshop\Application\Controller\Admin\AdminController;
-use OxidEsales\Eshop\Core\Field;
 use OxidEsales\Eshop\Core\Registry;
 use OxidEsales\EshopCommunity\Core\Di\ContainerFacade;
 use OxidEsales\EshopCommunity\Internal\Framework\Database\QueryBuilderFactoryInterface;
@@ -34,8 +33,10 @@ class ProductSelectionController extends AdminController
 
         if ($result['match']) {
             $bannerProduct = oxNew(BannerProduct::class);
-            $bannerProduct->oxacbannerproducts__oxid = $bannerProduct->getId();
-            $bannerProduct->oxacbannerproducts__oxacitemnumber = new Field($param['item-number']);
+            $bannerProduct->assign([
+                'oxid' => $bannerProduct->getId(),
+                'oxacitemnumber' => $param['item-number'],
+            ]);
             $bannerProduct->save();
         } else {
             $this->addTplParam('error', true);
