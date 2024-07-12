@@ -16,7 +16,7 @@ $aModule = [
         'de' => 'Zeigt einen Werbebanner für ein ausgewähltes Produkt auf der Startseite an.',
     ],
     'thumbnail' => 'pictures/logo.svg',
-    'version' => '2.2.1',
+    'version' => '2.2.2',
     'author' => 'OXID Academy',
     'url' => 'https://www.oxid-esales.com/ressourcen/academy/',
     'email' => 'academy@oxid-esales.com',
