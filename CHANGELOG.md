@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- `ProductSelectionController` Updated to new syntax (use assign).
+
 ## [2.2.1] - 2024-07-12
 
 ### Changed
-Adapted syntax for all language files.
+- Adapted syntax for all language files.
 
 ## [2.2.0] - 2024-07-11
 
