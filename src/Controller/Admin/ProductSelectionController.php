@@ -14,7 +14,7 @@ use OxidEsales\EshopCommunity\Internal\Framework\Database\QueryBuilderFactoryInt
 
 class ProductSelectionController extends AdminController
 {
-    private string $template = "@oxacppb/templates/productselection";
+    private string $template = '@oxacppb/templates/productselection';
     
     public function render(): string
     {
